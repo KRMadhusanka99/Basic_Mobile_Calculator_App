@@ -13,4 +13,22 @@ class MainViewModel : ViewModel() {
         //println(result.value)
         Log.d("Add Result",result.value.toString())
     }
+
+    fun sub(number1:Double,number2:Double){
+        result.value=number1.minus(number2)
+        //println(result.value)
+        Log.d("Add Result",result.value.toString())
+    }
+
+    fun multi(number1:Double,number2:Double){
+        result.value=number1.times(number2)
+        //println(result.value)
+        Log.d("Add Result",result.value.toString())
+    }
+
+    fun division(number1:Double,number2:Double){
+        result.value=number1.div(number2)
+        //println(result.value)
+        Log.d("Add Result",result.value.toString())
+    }
 }

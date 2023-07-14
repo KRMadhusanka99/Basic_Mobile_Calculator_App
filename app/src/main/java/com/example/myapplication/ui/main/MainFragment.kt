@@ -40,8 +40,25 @@ class MainFragment : Fragment() {
 
         var add = view.findViewById<Button>(R.id.addButton)
         add.setOnClickListener {
-            viewModel.add(Math.random()*6,6.0)
+            //viewModel.add(Math.random()*6,6.0)
+            viewModel.add(12.0,6.0)
         }
+
+        var min = view.findViewById<Button>(R.id.minButton)
+        min.setOnClickListener {
+            viewModel.sub(12.0,6.0)
+        }
+
+        var multi = view.findViewById<Button>(R.id.multiButton)
+        multi.setOnClickListener {
+            viewModel.multi(12.0,6.0)
+        }
+
+        var division = view.findViewById<Button>(R.id.divisionButton)
+        division.setOnClickListener {
+            viewModel.division(12.0,6.0)
+        }
+
         return view
     }
 
