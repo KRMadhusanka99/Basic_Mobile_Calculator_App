@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.example.myapplication.R
@@ -37,26 +38,31 @@ class MainFragment : Fragment() {
         viewModel.result.observe(viewLifecycleOwner, Observer {
             message.text = it.toString()
         })
+        var num1 = view.findViewById<EditText>(R.id.editTextNumber)
+        var num2 = view.findViewById<EditText>(R.id.editTextNumber)
+
+/*        var num1=6.0
+        var num2=2.0*/
 
         var add = view.findViewById<Button>(R.id.addButton)
         add.setOnClickListener {
             //viewModel.add(Math.random()*6,6.0)
-            viewModel.add(12.0,6.0)
+            viewModel.add(num1.text.toString().toDouble(), num2.text.toString().toDouble())
         }
 
         var min = view.findViewById<Button>(R.id.minButton)
         min.setOnClickListener {
-            viewModel.sub(12.0,6.0)
+            viewModel.sub(num1.text.toString().toDouble(), num2.text.toString().toDouble())
         }
 
         var multi = view.findViewById<Button>(R.id.multiButton)
         multi.setOnClickListener {
-            viewModel.multi(12.0,6.0)
+            viewModel.multi(num1.text.toString().toDouble(), num2.text.toString().toDouble())
         }
 
         var division = view.findViewById<Button>(R.id.divisionButton)
         division.setOnClickListener {
-            viewModel.division(12.0,6.0)
+            viewModel.division(num1.text.toString().toDouble(), num2.text.toString().toDouble())
         }
 
         return view
